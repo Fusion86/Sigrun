@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29319.158
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigrun", "Sigrun\Sigrun.csproj", "{8B616F47-FBE8-4C2C-AE08-DB37A623B1D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sigrun.Test", "Sigrun.Test\Sigrun.Test.csproj", "{DC9B4E84-8A7B-40D8-AB29-6C838F56DF8B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B616F47-FBE8-4C2C-AE08-DB37A623B1D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B616F47-FBE8-4C2C-AE08-DB37A623B1D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B616F47-FBE8-4C2C-AE08-DB37A623B1D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B616F47-FBE8-4C2C-AE08-DB37A623B1D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC9B4E84-8A7B-40D8-AB29-6C838F56DF8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC9B4E84-8A7B-40D8-AB29-6C838F56DF8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC9B4E84-8A7B-40D8-AB29-6C838F56DF8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC9B4E84-8A7B-40D8-AB29-6C838F56DF8B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C18E1547-BF15-4A67-911E-36D71922FD74}
+	EndGlobalSection
+EndGlobal

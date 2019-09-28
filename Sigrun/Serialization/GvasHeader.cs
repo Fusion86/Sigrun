@@ -1,7 +1,7 @@
 ﻿using Sigrun.Extensions;
 using System.IO;
 
-namespace Sigrun.Structs
+namespace Sigrun.Serialization
 {
     public class GvasHeader : ICanRead
     {

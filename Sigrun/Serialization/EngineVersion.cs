@@ -2,7 +2,7 @@
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace Sigrun.Structs
+namespace Sigrun.Serialization
 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     public class EngineVersion: ICanRead

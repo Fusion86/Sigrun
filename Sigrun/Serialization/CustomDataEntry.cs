@@ -2,7 +2,7 @@
 using System.Diagnostics;
 using System.IO;
 
-namespace Sigrun
+namespace Sigrun.Serialization
 {
     [DebuggerDisplay("{DebuggerDisplay,nq}")]
     public class CustomDataEntry : ICanRead

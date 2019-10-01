@@ -17,7 +17,5 @@
     }
 
     public class UEIntProperty : UEProperty<int> { }
-
-    // TODO: object might not be the best type here
-    public class UEArrayProperty : UEProperty<object> { }
+    public class UEArrayProperty<T> : UEProperty<T[]> { }
 }

@@ -90,19 +90,9 @@ namespace Sigrun.Extensions
             var type = br.ReadUEString();
             var valueLength = br.ReadInt64();
 
-            UEProperty prop = type switch
+            switch (type)
             {
-                "IntProperty" => new UEIntProperty(),
-                "ArrayProperty" => new UEArrayProperty(),
-                _ => throw new Exception("Unrecognized property type!"),
-            };
-
-            prop.Name = name;
-            prop.Type = type;
-
-            switch (prop)
-            {
-                case UEIntProperty x:
+                case "IntProperty":
                     {
                         var terminator = br.ReadByte();
                         if (terminator != 0)
@@ -111,30 +101,36 @@ namespace Sigrun.Extensions
                         if (valueLength != sizeof(int))
                             throw new FormatException($"Expected int value of length {sizeof(int)}, but was {valueLength}");
 
-                        x.Value = br.ReadInt32();
+                        return new UEIntProperty
+                        {
+                            Name = name,
+                            Type = type,
+                            Value = br.ReadInt32()
+                        };
                     }
-                    break;
-                case UEArrayProperty x:
+                case "ArrayProperty":
                     {
-                        var itemType = br.ReadUEString();
+                        var subType = br.ReadUEString();
                         var terminator = br.ReadByte();
                         if (terminator != 0)
                             throw new FormatException($"Offset: 0x{br.BaseStream.Position - 1:x8}. Expected terminator (0x00), but was (0x{terminator:x2})");
 
-                        switch (itemType)
+                        switch (subType)
                         {
                             case "ByteProperty":
-                                var itemLength = br.ReadInt32();
-                                x.Value = br.ReadBytes(itemLength);
-                                break;
+                                {
+                                    var itemLength = br.ReadInt32();
+                                    var obj = new UEArrayProperty<byte> { Name = name, Type = type };
+                                    obj.Value = br.ReadBytes(itemLength);
+                                    return obj;
+                                }
                             default:
                                 throw new Exception("Unrecognized property type!");
                         }
                     }
-                    break;
+                default:
+                    throw new Exception($"Unrecognized property type '{type}'");
             }
-
-            return prop;
         }
     }
 }
